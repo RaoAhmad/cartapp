@@ -24,7 +24,11 @@ export const Flatlist = () => {
   return (
    <View>
 <Text>this is flat List</Text>
-<FlatList></FlatList>
+
+<FlatList
+data={employees}
+renderItem={(item)=><Text></Text>}
+/>
    </View>
 
   )
