@@ -27,7 +27,7 @@ export const Flatlist = () => {
 
 <FlatList
 data={employees}
-renderItem={(item)=><Text></Text>}
+renderItem={(item)=><Text>{item.name}</Text>}
 />
    </View>
 
