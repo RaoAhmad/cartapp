@@ -6,6 +6,7 @@ export default function App() {
     <View style={styles.container}>
       <Text style={{fontSize:30}}>hi expo!</Text>
       <StatusBar style="auto" />
+     
     </View>
   );
 }
