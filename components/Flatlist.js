@@ -22,14 +22,17 @@ export const Flatlist = () => {
 ]
 
   return (
-   <View>
+   <View style={{paddingTop:20}}>
 <Text>this is flat List</Text>
 
 <FlatList
 data={employees}
-renderItem={(item)=><Text>{item.name}</Text>}
-/>
+renderItem={({item})=><Text>{item.name}</Text>}
+keyExtractor={(item) => item.id.toString()}
+/> 
    </View>
 
   )
 }
+
+export default Flatlist;
