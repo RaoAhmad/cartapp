@@ -1,6 +1,7 @@
 import {Text, View, StyleSheet, FlatList} from "react-native"
 
-export const Flatlist = () => {
+export const Flatlist = (props) => {
+    console.warn(props.route.params)
 
     const employees=[
         {
