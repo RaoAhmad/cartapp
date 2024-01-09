@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, Button, FlatList} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Flatlist from './components/Flatlist';
+import Homescreen from './components/Homescreen';
 
 
 
@@ -30,7 +31,7 @@ export default function App() {
              /* for all screen header design chage */
         }
       }}>
-      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="Homescreen" component={Homescreen} />
       <Stack.Screen name="Flatlist" component={Flatlist}   
        options={{
         headerTitle:()=><Button   onPress={app} title="left"/>,
@@ -58,14 +59,4 @@ const styles = StyleSheet.create({
  
 });
 
-function HomeScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to Flatlist"
-        onPress={() => navigation.navigate("Flatlist",{name: "Ahmad"})}
-      />
-    </View>
-  );
-}
+
