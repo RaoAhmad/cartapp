@@ -4,7 +4,7 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import {Text, View, Button, StyleSheet  } from 'react-native'
 import Homescreen from './components/Homescreen';
 import Flatlist from './components/Flatlist';
-
+import Search from './components/Search';
 const Tab = createMaterialTopTabNavigator()
    const  App = () =>{
   
@@ -14,6 +14,7 @@ const Tab = createMaterialTopTabNavigator()
     <Tab.Navigator  >
     <Tab.Screen name="Homescreen" component={Homescreen} />
     <Tab.Screen name="Flatlist" component={Flatlist}   />
+    <Tab.Screen name="Search" component={Search}   />
     </Tab.Navigator>
     </NavigationContainer>
 </>
