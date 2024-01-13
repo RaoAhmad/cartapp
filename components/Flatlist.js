@@ -1,9 +1,9 @@
 import { useEffect } from "react"
 import {Text, View, StyleSheet, FlatList, Image, ActivityIndicator} from "react-native"
 import {useState} from "react";
-export const Flatlist = (props) => {
+export const Flatlist = ( props ) => {
     //getting props from Homescreen component
-    console.warn(props.route.params)
+    /* console.warn(props.route.params) */
 
     /* const employees=[
         {
@@ -28,7 +28,7 @@ const [data, setData] = useState({});
 const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 const Getdata = async () =>{
-    try { const url = "http://192.168.43.137:3000/users"
+    try {  const url = "http://192.168.43.137:3000/users"
     let result = await fetch(url)
     const data = await result.json()
  setData(data)
