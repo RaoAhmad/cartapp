@@ -13,7 +13,7 @@ const Homescreen=({ navigation })=> {
         />
         <Button
           title="Go to Flatlist"
-          onPress={() => navigation.navigate("Flatlist",{name})}
+     /*      onPress={() => navigation.navigate("Flatlist",{name})} */
         />
       </View>
     );
