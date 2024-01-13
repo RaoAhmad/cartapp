@@ -44,6 +44,14 @@ export default function App() {
       }}/>
     </Stack.Navigator>
   </NavigationContainer>
+
+  {/* <NavigationContainer>
+    <Tab.Navigator  >
+    <Tab.Screen name="Homescreen" component={Homescreen} />
+    <Tab.Screen name="Flatlist" component={Flatlist}   />
+    <Tab.Screen name="Search" component={Search}   />
+    </Tab.Navigator>
+    </NavigationContainer> */}
 </>
   );
 }
