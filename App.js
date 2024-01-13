@@ -1,37 +1,52 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import {Text, View, Button, StyleSheet  } from 'react-native'
-import Homescreen from './components/Homescreen';
-import Flatlist from './components/Flatlist';
-import Search from './components/Search';
-const Tab = createMaterialTopTabNavigator()
-   const  App = () =>{
-  
-  
-  return (<>
-    <NavigationContainer>
-    <Tab.Navigator  >
-    <Tab.Screen name="Homescreen" component={Homescreen} />
-    <Tab.Screen name="Flatlist" component={Flatlist}   />
-    <Tab.Screen name="Search" component={Search}   />
-    </Tab.Navigator>
-    </NavigationContainer>
-</>
+import React from 'react';
+import { Text, View, Button, StyleSheet, ScrollView } from 'react-native';
+
+import  store  from './redux/store'; 
+import Product from './components/Product';
+import Header from './components/Header';
+import { Provider } from 'react-redux';
+
+const App = () => {
+  const product = [
+    {
+      name: 'oppo',
+      color: 'red',
+      price: 20,
+    },
+    {
+      name: 'vivo',
+      color: 'Black',
+      price: 30,
+    },
+    {
+      name: 'apple',
+      color: 'gray',
+      price: 40,
+    },
+  ];
+
+  return (
+    <>
+    <Provider store={store}>
+        <View style={styles.container}>
+          <Text style={{ paddingTop: 50 }}>This is a UI component</Text>
+          <Header />
+          <ScrollView>
+            {product.map((item, index) => (
+              <Product key={index} item={item} />
+            ))}
+          </ScrollView>
+        </View>
+   </Provider>
+    </>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '',
-    alignItems: 'center',
-    justifyContent: 'center',
-    colour: '#fff',
-    paddingTop:60,
-    
-    },
- 
+    paddingTop: 60,
+  },
 });
 
 export default App;
