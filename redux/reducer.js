@@ -1,12 +1,20 @@
 // reducer.js
-import { Add_To_Cart } from "./constants";
+import { ADD_TO_CART,  REMOVE_FROM_CART } from "./constants";
 
 const initialState = [];
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case Add_To_Cart:
+    case ADD_TO_CART :
       return [...state, action.data];
-    default:
+    
+      case REMOVE_FROM_CART :
+        let result = state.filter(item => {
+          return item.name != action.data
+        })
+      return [...result ];
+      
+      default:
       return state;
+    
   }
 };
