@@ -21,15 +21,24 @@ dispatch(addToCart(product))
 
 const [isAdded, setIsAdded] = useState(false)
 
-  useEffect(()=>{
+  /* useEffect(()=>{
  if( cartItems && cartItems.length){
   cartItems.forEach((cartItem)=>{
 if (cartItem.name === product.name){
 setIsAdded(true);
-}
-  })
- }
+} }
   },[cartItems])
+
+  }) */
+  useEffect(()=>{
+  let result =cartItems.filter((item)=>{
+return item.name === product.name
+
+  })
+  if(result.length){
+    setIsAdded(true);
+  }else{setIsAdded(false);}
+  }, [cartItems])
 
   return (<>
     <View  style={{ alignItems:'center', borderBottomColor:'pink', borderBottomWidth:2, padding:10 }} key={product.name} >
