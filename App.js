@@ -1,6 +1,5 @@
 import React from 'react';
 import { Text, View, Button, StyleSheet, ScrollView } from 'react-native';
-
 import  store  from './redux/store'; 
 import Product from './components/Product';
 import Header from './components/Header';
