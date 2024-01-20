@@ -12,16 +12,19 @@ const App = () => {
       name: 'oppo',
       color: 'red',
       price: 20,
+      
     },
     {
       name: 'vivo',
       color: 'Black',
       price: 30,
+      
     },
     {
       name: 'apple',
       color: 'gray',
       price: 40,
+      
     },
   ];
 
@@ -32,7 +35,7 @@ const App = () => {
           <Text style={{ paddingTop: 50 }}>This is a UI component</Text>
           <Header />
           <ScrollView>
-            {product.map((item, index) => (
+            {product.map((item,index) => (
               <Product key={index} item={item} />
             ))}
           </ScrollView>
