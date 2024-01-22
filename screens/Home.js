@@ -16,8 +16,9 @@ const Home = () => {
         <View  style={styles.bodyContainer}>
  <Text style={styles.title}>Medicanes</Text>
     <Text style={styles.subTitle}>Here You Will Find all Kind Medicanes</Text>
-    <ProductCart/>
+ 
  </View>
+ <ProductCart/> 
         </View>
 
 
@@ -27,35 +28,34 @@ const Home = () => {
 }
 
 export default Home
+const styles = StyleSheet.create({
 
+    container: {
+    flex: 1,
+    
+    },
+    Header: {
+    
+        flexDirection:'row',
+        alignItems: 'center',
+        justifyContent:'space-between',
+        paddingHorizontal: 30,
+    },
+    title: {
+    fontSize:30,
+    color: '#000',
+    fontWeight:'bold',
+    
+    
+    },
+    subTitle: {
+        fontSize:15,
+    
+    },
+    bodyContainer:{
+    
+        paddingHorizontal: 30,
+        marginTop:20,
+    },
+    })
 
-styles = StyleSheet.create({
-
-container: {
-flex: 1,
-
-},
-Header: {
-
-    flexDirection:'row',
-    alignItems: 'center',
-    justifyContent:'space-between',
-    paddingHorizontal: 30,
-},
-title: {
-fontSize:30,
-color: '#000',
-fontWeight:'bold',
-
-
-},
-subTitle: {
-    fontSize:15,
-
-},
-bodyContainer:{
-
-    paddingHorizontal: 30,
-    marginTop:20,
-},
-})
