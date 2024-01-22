@@ -3,8 +3,8 @@ import Svg, { Path } from "react-native-svg"
 const Menu= (props) => (
   <Svg
  
-    width={50}
-    height={50}
+    width={30}
+    height={30}
     fill="none"
     viewBox="0 0 24 24"
     {...props}
