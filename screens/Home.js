@@ -3,8 +3,22 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import Menu from '../svg/Menu'
 import Dot from '../svg/Dot';
 import ProductCart from '../components/ProductCart';
+import { FlatList } from 'react-native';
+import { medicanData } from '../Data/Data';
+import { TouchableOpacity } from 'react-native';
 const Home = () => {
-  return (<>
+
+     const renderItem = ({item, index}) =>{
+        return(<>
+<TouchableOpacity>
+<ProductCart  item={item}/> 
+</TouchableOpacity>
+</>
+        )
+     }
+
+
+return (<>
     <View style={styles.container}>
         <SafeAreaView >
             <View style={styles.Header}>
@@ -18,7 +32,16 @@ const Home = () => {
     <Text style={styles.subTitle}>Here You Will Find all Kind Medicanes</Text>
  
  </View>
- <ProductCart/> 
+{/*  <ProductCart/>  */}
+<FlatList   
+data={medicanData}
+keyExtractor={(item) =>`${item.id}`}
+renderItem={renderItem}
+numColumns={2}
+contentContainerStyle={styles.contentContainerStyle}
+showsVerticalScrollIndicator={false}
+/>
+
         </View>
 
 
@@ -57,5 +80,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: 30,
         marginTop:20,
     },
+    contentContainerStyle:{
+alignItems: "center",
+    }
     })
 
