@@ -13,7 +13,7 @@ const ProductDetails = () => {
       <View style={styles.backgound}>
 <SafeAreaView/>
     
-      <Animated.Image   sharedTransitionTag={`T${params.data.id}`}  source={params.data.image}   style={styles.image}/>
+      <Animated.Image     sharedTransitionTag={`T${params.data.id}`}   source={params.data.image}   style={styles.image}/>
    </View>
    <View style={styles.bodyContainer}>
     <View style={styles.box}>
