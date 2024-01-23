@@ -6,13 +6,18 @@ import ProductCart from '../components/ProductCart';
 import { FlatList } from 'react-native';
 import { medicanData } from '../Data/Data';
 import { TouchableOpacity } from 'react-native';
+import Animated, { FadeIn, FadeInDown, FadeInLeft, FadeInRight } from 'react-native-reanimated';
+import { useNavigation } from '@react-navigation/native';
 const Home = () => {
-
+const {navigate} = useNavigation()
      const renderItem = ({item, index}) =>{
         return(<>
-<TouchableOpacity>
+        <Animated.View  entering={FadeInDown.delay(index*100).duration(600).springify().damping(15)}>
+<TouchableOpacity  onPress={()=>navigate("ProductDetails", { data: item})}>
 <ProductCart  item={item}/> 
 </TouchableOpacity>
+</Animated.View>
+
 </>
         )
      }
@@ -21,15 +26,19 @@ const Home = () => {
 return (<>
     <View style={styles.container}>
         <SafeAreaView >
-            <View style={styles.Header}>
+        <View style={styles.Header}>
         {/* header */}
-        <Menu/>
+        <Animated.View  entering={FadeInLeft.delay(100).duration(400)}>
+      <Menu/>
+       </Animated.View>
+        <Animated.View  entering={FadeInRight.delay(100).duration(400)}>
         <Dot/>
+        </Animated.View>
         </View>
         </SafeAreaView>
         <View  style={styles.bodyContainer}>
- <Text style={styles.title}>Medicanes</Text>
-    <Text style={styles.subTitle}>Here You Will Find all Kind Medicanes</Text>
+ <Animated.Text  style={styles.title}   entering={FadeInRight.delay(200).duration(500)}>Medicanes</Animated.Text>
+    <Animated.Text style={styles.subTitle} entering={FadeInRight.delay(200).duration(500)}>Here You Will Find all Kind Medicanes</Animated.Text>
  
  </View>
 {/*  <ProductCart/>  */}
