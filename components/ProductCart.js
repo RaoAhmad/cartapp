@@ -1,13 +1,13 @@
 import React from 'react';
 import { Text, View, StyleSheet, Image } from 'react-native';
-
+import  Animated from 'react-native-reanimated';
 const ProductCart = (props) => {
   const {item } = props;
 
   return (
     <View style={styles.box}>
      
-      <Image style={styles.image} source={require("../images/acefyl.png")} />
+      <Animated.Image  sharedTransitionTag={`T${item.id}`} style={styles.image} source={item.image} />
       <Text style={styles.currency}>${item.price}</Text>
       <Text style={styles.title}> Acefyl</Text>
     </View>
