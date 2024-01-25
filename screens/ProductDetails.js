@@ -4,34 +4,54 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { TouchableOpacity } from 'react-native';
 import Animated, { FadeInLeft, FadeInRight } from 'react-native-reanimated';
 import { suggestProduct } from '../Data/suggestProduct';
+import Menu from '../svg/Menu'
+import Dot from '../svg/Dot';
+import { useDispatch } from 'react-redux';
+import {addToCart} from '../store/action';
 const ProductDetails = () => {
   const {params} = useRoute();
+  const data = params.data
+  const  dispatch = useDispatch();
+
+ const  handleAddToCart =(data) =>{
+dispatch(addToCart(data));
+
+ }
   /* here we are getting data from params and params have data in data array */
   return (
+    <ScrollView>
     <View   style={styles.container}>
-<ScrollView>
+   
       <View style={styles.backgound}>
-<SafeAreaView/>
-    
-      <Animated.Image     sharedTransitionTag={`T${params.data.id}`}   source={params.data.image}   style={styles.image}/>
+     <SafeAreaView/>
+   
+ <Animated.Image
+               sharedTransitionTag={`T${data.id}`} 
+              source={data.image}
+              style={styles.image}
+            />
+       
+    {/*   <Animated.Image     sharedTransitionTag={`T${params.data.id}`}   source={params.data.image}   style={styles.image}/> */}
    </View>
+
+  
    <View style={styles.bodyContainer}>
     <View style={styles.box}>
 
-<Animated.Text entering={FadeInLeft.delay(200).duration(400)}   style={styles.title}>{params.data.name}</Animated.Text>
+<Animated.Text entering={FadeInLeft.delay(200).duration(400)}   style={styles.title}>{data.name}</Animated.Text>
 <View  style={styles.inerBox}>
 < Animated.Text entering={FadeInRight.delay(200).duration(400)} style={styles.price}>
   <Text style={styles.currency}>$</Text>
-{params.data.price}
+{data.price}
 </Animated.Text>
-<Animated.Text entering={FadeInRight.delay(200).duration(400)} style={styles.rating}>⭐{params.data.rating}</Animated.Text>
+<Animated.Text entering={FadeInRight.delay(200).duration(400)} style={styles.rating}>⭐{data.rating}</Animated.Text>
 </View>
 
 </View>
 {/* Description */}
-<Text style={styles.description}>{params.data.description}</Text>
+<Text style={styles.description}>{data.description}</Text>
 <TouchableOpacity style={styles.btn}>
-<Text style={styles.btnTitle}>Shop Now</Text>
+<Text  onPress={( )=>handleAddToCart(data)} style={styles.btnTitle}>Shop Now</Text>
 </TouchableOpacity>
 {/* suggested products */}
 
@@ -52,8 +72,9 @@ const ProductDetails = () => {
 }
 </View>
 </View>
-</ScrollView>
+
     </View>
+    </ScrollView>
   )
 }
 
@@ -63,10 +84,11 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
+    
 
   },
   backgound:{
-    height: 250,
+    height: 210,
     borderBottomRightRadius:50,
     borderBottomLeftRadius:50,
     backgroundColor: 'lightgray',
@@ -76,7 +98,8 @@ const styles = StyleSheet.create({
   image: {
 height: 200,
 width: 200,
-paddingTop: 10,
+marginTop: 60,
+
 resizeMode: 'contain',
 alignSelf: 'center',
   },
