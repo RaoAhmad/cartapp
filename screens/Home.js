@@ -8,8 +8,14 @@ import { medicanData } from '../Data/Data';
 import { TouchableOpacity } from 'react-native';
 import Animated, { FadeIn, FadeInDown, FadeInLeft, FadeInRight } from 'react-native-reanimated';
 import { useNavigation } from '@react-navigation/native';
+import {  useSelector } from 'react-redux';
+
+
 const Home = () => {
 const {navigate} = useNavigation()
+
+const data =useSelector((state) =>state.reducer);
+console.log(data);
      const renderItem = ({item, index}) =>{
         return(<>
         <Animated.View  entering={FadeInDown.delay(index*100).duration(600).springify().damping(15)}>
@@ -32,7 +38,9 @@ return (<>
       <Menu/>
        </Animated.View>
         <Animated.View  entering={FadeInRight.delay(100).duration(400)}>
+         
         <Dot/>
+        <Text>{data.length}</Text>
         </Animated.View>
         </View>
         </SafeAreaView>
@@ -46,7 +54,7 @@ return (<>
 data={medicanData}
 keyExtractor={(item) =>`${item.id}`}
 renderItem={renderItem}
-numColumns={2}
+numColumns={3}
 contentContainerStyle={styles.contentContainerStyle}
 showsVerticalScrollIndicator={false}
 />
