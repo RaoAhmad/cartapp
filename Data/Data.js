@@ -71,4 +71,22 @@ export const medicanData = [
     price: 39.99,
     image: require("../images/acefyl.png"),
   },
+  {
+    id: 9,
+    name: "SleepWell Herbal ",
+    description:
+      "Herbal tea blend to promote relaxation and improve sleep quality. Caffeine-free and soothing.",
+    rating: 4.8,
+    price: 39.99,
+    image: require("../images/acefyl.png"),
+  },
+  {
+    id: 10,
+    name: "SleepWell Herbal ",
+    description:
+      "Herbal tea blend to promote relaxation and improve sleep quality. Caffeine-free and soothing.",
+    rating: 4.8,
+    price: 39.99,
+    image: require("../images/acefyl.png"),
+  },
 ];
