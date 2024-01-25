@@ -9,7 +9,7 @@ const ProductCart = (props) => {
      
       <Animated.Image  sharedTransitionTag={`T${item.id}`} style={styles.image} source={item.image} />
       <Text style={styles.currency}>${item.price}</Text>
-      <Text style={styles.title}> Acefyl</Text>
+      <Text style={styles.title}> {item.name}</Text>
     </View>
   );
 }
@@ -20,15 +20,15 @@ const styles = StyleSheet.create({
   box: {
     flex: 1,
     alignItems: 'center',
-    padding:20,
-    margin: 5,
+  /*   padding:20, */
+     margin: 5,
   },
   image: {
-    width: 150,
-    height: 150,
+    width: 120,
+    height: 120,
   },
   title: {
-    fontSize: 24,
+    fontSize: 14,
   fontWeight: 'bold',
   },
   currency: {
