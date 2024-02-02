@@ -5,10 +5,10 @@ import Home from '../screens/Home'
 import  ProductDetails from '../screens/ProductDetails'
 import Medicare from '../screens/Medicare';
 import Header from '../screens/Header';
-
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+/* 
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'; */
 const Stack = createNativeStackNavigator();
-const Tab = createBottomTabNavigator();
+/* const Tab = createBottomTabNavigator(); */
 const AppNavigation = () => {
 
   return (
