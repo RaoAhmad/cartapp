@@ -6,7 +6,7 @@ export const medicanData = [
       "Effective pain relief tablets for various conditions. Helps alleviate pain and discomfort.",
     rating: 4.5,
     price: 19.99,
-    image: require("../images/acefyl.png"),
+    image: require("../images/panadol.png"),
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const medicanData = [
       "Soothing syrup to relieve cough and throat irritation. Provides fast and effective relief.",
     rating: 4.7,
     price: 24.99,
-    image: require("../images/acefyl.png"),
+    image: require("../images/arinac.png"),
   },
   {
     id: 3,
