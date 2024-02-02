@@ -55,7 +55,7 @@
     data={medicanData}
     keyExtractor={(item) =>`${item.id}`}
     renderItem={renderItem}
-    numColumns={3}
+    numColumns={2}
     contentContainerStyle={styles.contentContainerStyle}
     showsVerticalScrollIndicator={false}
     />
