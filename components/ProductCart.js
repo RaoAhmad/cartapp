@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   box: {
     flex: 1,
     alignItems: 'center',
-  /*   padding:20, */
+    padding:20,
      margin: 5,
   },
   image: {
